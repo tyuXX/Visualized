@@ -1,3 +1,25 @@
+:root {
+    /* Light Mode Colors */
+    --bg-primary: #f4f4f4;
+    --bg-secondary: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --accent-color: #4a90e2;
+    --array-bar-color: #3498db;
+    --comparing-color: #e74c3c;
+    --sorted-color: #2ecc71;
+
+    /* Dark Mode Colors */
+    --dark-bg-primary: #121212;
+    --dark-bg-secondary: #1e1e1e;
+    --dark-text-primary: #e0e0e0;
+    --dark-text-secondary: #b0b0b0;
+    --dark-accent-color: #bb86fc;
+    --dark-array-bar-color: #6200ee;
+    --dark-comparing-color: #cf6679;
+    --dark-sorted-color: #03dac6;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,17 +28,29 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s;
     padding: 20px;
+}
+
+body.dark-mode {
+    background-color: var(--dark-bg-primary);
+    color: var(--dark-text-primary);
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: white;
+    background-color: var(--bg-secondary);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .container {
+    background-color: var(--dark-bg-secondary);
 }
 
 .controls {
@@ -62,10 +96,17 @@ button:disabled {
 
 .explanation {
     padding: 15px;
-    background-color: #f8f9fa;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
     border-radius: 4px;
     font-size: 14px;
     line-height: 1.5;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .explanation {
+    background-color: var(--dark-bg-secondary);
+    color: var(--dark-text-primary);
 }
 
 /* Array visualization styles */
@@ -75,24 +116,41 @@ button:disabled {
     align-items: flex-end;
     height: 300px;
     gap: 2px;
+    margin-top: 20px;
 }
 
 .array-bar {
     width: 30px;
-    background-color: #3498db;
-    transition: height 0.3s ease;
+    background-color: var(--array-bar-color);
+    transition: background-color 0.3s, height 0.3s;
+}
+
+body.dark-mode .array-bar {
+    background-color: var(--dark-array-bar-color);
 }
 
 .array-bar.comparing {
-    background-color: #f1c40f;
+    background-color: var(--comparing-color);
+}
+
+body.dark-mode .array-bar.comparing {
+    background-color: var(--dark-comparing-color);
 }
 
 .array-bar.swapping {
     background-color: #e74c3c;
 }
 
+body.dark-mode .array-bar.swapping {
+    background-color: var(--dark-comparing-color);
+}
+
 .array-bar.sorted {
-    background-color: #2ecc71;
+    background-color: var(--sorted-color);
+}
+
+body.dark-mode .array-bar.sorted {
+    background-color: var(--dark-sorted-color);
 }
 
 .parameter-container {
@@ -101,8 +159,13 @@ button:disabled {
     gap: 10px;
     margin-bottom: 20px;
     padding: 15px;
-    background-color: #f1f1f1;
+    background-color: var(--bg-secondary);
     border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .parameter-container {
+    background-color: var(--dark-bg-secondary);
 }
 
 .parameter-input {
@@ -113,7 +176,11 @@ button:disabled {
 
 .parameter-input label {
     font-size: 14px;
-    color: #333;
+    color: var(--text-primary);
+}
+
+body.dark-mode .parameter-input label {
+    color: var(--dark-text-primary);
 }
 
 .parameter-input input, 
@@ -125,14 +192,20 @@ button:disabled {
 }
 
 .detailed-explanation {
-    background-color: #f9f9f9;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 20px;
     margin-top: 20px;
     line-height: 1.6;
     font-size: 14px;
-    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .detailed-explanation {
+    background-color: var(--dark-bg-secondary);
+    color: var(--dark-text-primary);
 }
 
 .detailed-explanation h3 {
@@ -142,9 +215,18 @@ button:disabled {
     margin-bottom: 15px;
 }
 
+body.dark-mode .detailed-explanation h3 {
+    color: var(--dark-text-primary);
+    border-bottom: 2px solid var(--dark-array-bar-color);
+}
+
 .detailed-explanation h4 {
     color: #34495e;
     margin-top: 15px;
+}
+
+body.dark-mode .detailed-explanation h4 {
+    color: var(--dark-text-secondary);
 }
 
 .detailed-explanation ul, 
@@ -157,4 +239,27 @@ button:disabled {
     display: block;
     margin-top: 10px;
     color: #2980b9;
+}
+
+body.dark-mode .detailed-explanation strong {
+    color: var(--dark-accent-color);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode #theme-toggle {
+    background-color: var(--dark-accent-color);
+    color: var(--dark-bg-primary);
 }
