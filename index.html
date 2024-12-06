@@ -6,19 +6,25 @@
         <title>Algorithm Visualizer</title>
         <meta name="description" content="Interactive algorithm visualization tool">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <div class="container">
             <div class="controls">
-                <select name="algorithm" id="algorithmSelect"></select>
+                <select name="algorithm" id="algorithmSelect">
+                    <option value="None">None</option>
+                </select>
                 <button id="startButton" onclick="startAlg()">Start</button>
                 <button id="stopButton" onclick="stopAlg()" disabled>Stop</button>
             </div>
+            <div id="parameterContainer" class="parameter-container">
+                <!-- Dynamic parameter inputs will be inserted here -->
+            </div>
             <div id="visualisationDiv" class="visualization-container"></div>
             <div id="explanation" class="explanation"></div>
+            <div id="detailedExplanation" class="detailed-explanation"></div>
         </div>
-        <script src="algorithms.js"></script>
-        <script src="script.js" defer></script>
+        <script src="js/algorithms.js"></script>
+        <script src="js/script.js" defer></script>
     </body>
 </html>

@@ -94,3 +94,67 @@ button:disabled {
 .array-bar.sorted {
     background-color: #2ecc71;
 }
+
+.parameter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+.parameter-input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.parameter-input label {
+    font-size: 14px;
+    color: #333;
+}
+
+.parameter-input input, 
+.parameter-input select {
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.detailed-explanation {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    line-height: 1.6;
+    font-size: 14px;
+    color: #333;
+}
+
+.detailed-explanation h3 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.detailed-explanation h4 {
+    color: #34495e;
+    margin-top: 15px;
+}
+
+.detailed-explanation ul, 
+.detailed-explanation ol {
+    padding-left: 30px;
+    margin-bottom: 15px;
+}
+
+.detailed-explanation strong {
+    display: block;
+    margin-top: 10px;
+    color: #2980b9;
+}
