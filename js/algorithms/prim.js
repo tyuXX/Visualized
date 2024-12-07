@@ -135,7 +135,8 @@ Algorithms.push({
             line.setAttribute('y2', v2.y);
             line.setAttribute('stroke', '#CCCCCC');
             line.setAttribute('stroke-width', '2');
-            line.id = `edge-${edge.from}-${edge.to}`;
+            // Create edge ID that works in both directions
+            line.id = `edge-${Math.min(edge.from, edge.to)}-${Math.max(edge.from, edge.to)}`;
             edgesGroup.appendChild(line);
             
             // Add weight label
@@ -148,7 +149,8 @@ Algorithms.push({
             text.setAttribute('dominant-baseline', 'middle');
             text.setAttribute('fill', '#666666');
             text.textContent = edge.weight;
-            text.id = `weight-${edge.from}-${edge.to}`;
+            // Create weight ID that works in both directions
+            text.id = `weight-${Math.min(edge.from, edge.to)}-${Math.max(edge.from, edge.to)}`;
             labelsGroup.appendChild(text);
         });
         
@@ -204,14 +206,17 @@ Algorithms.push({
                     
                     // Edge must connect visited to unvisited vertex
                     if ((isFromVisited && !isToVisited) || (!isFromVisited && isToVisited)) {
-                        const edgeElement = document.getElementById(`edge-${edge.from}-${edge.to}`);
+                        // Get edge ID in consistent order
+                        const edgeId = `edge-${Math.min(edge.from, edge.to)}-${Math.max(edge.from, edge.to)}`;
+                        const edgeElement = document.getElementById(edgeId);
                         edgeElement.setAttribute('stroke', '#FF9800');
                         
                         if (edge.weight < minWeight) {
                             if (minEdge) {
-                                // Reset previous minimum edge
-                                const prevEdge = document.getElementById(`edge-${minEdge.from}-${minEdge.to}`);
-                                if (!mst.has(`${minEdge.from}-${minEdge.to}`)) {
+                                // Reset previous minimum edge using consistent ID
+                                const prevEdgeId = `edge-${Math.min(minEdge.from, minEdge.to)}-${Math.max(minEdge.from, minEdge.to)}`;
+                                const prevEdge = document.getElementById(prevEdgeId);
+                                if (!mst.has(`${Math.min(minEdge.from, minEdge.to)}-${Math.max(minEdge.from, minEdge.to)}`)) {
                                     prevEdge.setAttribute('stroke', '#CCCCCC');
                                 }
                             }
@@ -227,16 +232,17 @@ Algorithms.push({
                 await asyncUpdate(speed);
                 
                 if (minEdge) {
-                    // Add edge to MST
-                    const edgeKey = `${minEdge.from}-${minEdge.to}`;
+                    // Add edge to MST using consistent order
+                    const edgeKey = `${Math.min(minEdge.from, minEdge.to)}-${Math.max(minEdge.from, minEdge.to)}`;
                     mst.add(edgeKey);
                     
                     // Add unvisited vertex to visited set
                     const newVertex = visited.has(minEdge.from) ? minEdge.to : minEdge.from;
                     visited.add(newVertex);
                     
-                    // Update visualization
-                    const edgeElement = document.getElementById(`edge-${minEdge.from}-${minEdge.to}`);
+                    // Update visualization using consistent ID
+                    const edgeId = `edge-${Math.min(minEdge.from, minEdge.to)}-${Math.max(minEdge.from, minEdge.to)}`;
+                    const edgeElement = document.getElementById(edgeId);
                     edgeElement.setAttribute('stroke', '#4CAF50');
                     edgeElement.setAttribute('stroke-width', '3');
                     
