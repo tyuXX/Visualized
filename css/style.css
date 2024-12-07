@@ -197,6 +197,14 @@ body.dark-mode .parameter-input label {
     font-size: 14px;
 }
 
+.explanation {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s
+}
+
 .detailed-explanation {
     background-color: var(--bg-secondary);
     color: var(--text-primary);

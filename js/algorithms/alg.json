@@ -4,5 +4,8 @@
     "mergesort.js",
     "quicksort.js",
     "depthfirstsearch.js",
-    "astar.js"
+    "astar.js",
+    "dijkstra.js",
+    "selectionsort.js",
+    "prim.js"
 ]
