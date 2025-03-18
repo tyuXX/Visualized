@@ -1,9 +1,9 @@
 Algorithms.push({
-  name: "Binary Search",
+  // Modified for translations:
+  name: translator.translateToActive("binarySearch_name") || "Binary Search",
   id: "binarySearch",
-  description:
-    "An efficient algorithm for searching a sorted array by repeatedly dividing the search interval in half.",
-  detailedExplanation: `
+  description: translator.translateToActive("binarySearch_description") || "An efficient algorithm for searching a sorted array by repeatedly dividing the search interval in half.",
+  detailedExplanation: translator.translateToActive("binarySearch_detailedExplanation") || `
 <h3>Binary Search Algorithm Explained</h3>
 <p>Binary Search is a highly efficient algorithm for finding an element in a sorted array. Here's how it works:</p>
 

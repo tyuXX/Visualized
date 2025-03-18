@@ -1,8 +1,9 @@
 Algorithms.push({
-    name: "A* Search",
+    // Modified for translations:
+    name: translator.translateToActive("astar_name") || "A* Search",
     id: "astar",
-    description: "A* is an informed search algorithm that finds the shortest path between nodes using heuristics.",
-    detailedExplanation: `
+    description: translator.translateToActive("astar_description") || "An informed search algorithm that finds the shortest path between nodes using heuristics.",
+    detailedExplanation: translator.translateToActive("astar_detailedExplanation") || `
 <h3>A* (A-Star) Pathfinding Algorithm</h3>
 <p>A* is an informed search algorithm that combines Dijkstra's algorithm with heuristic search to find the shortest path efficiently.</p>
 
@@ -42,7 +43,7 @@ Algorithms.push({
 <li>May be slower than simpler algorithms for small spaces</li>
 <li>Effectiveness depends on heuristic quality</li>
 </ul>
-    `,
+`,
     parameters: [
         {
             name: "Grid Size",

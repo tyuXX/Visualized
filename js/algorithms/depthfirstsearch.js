@@ -1,8 +1,8 @@
 Algorithms.push({
-    name: "Depth First Search",
+    name: translator.translateToActive("depthFirstSearch_name") || "Depth First Search",
     id: "depthFirstSearch",
-    description: "A graph traversal algorithm that explores as far as possible along each branch before backtracking.",
-    detailedExplanation: `
+    description: translator.translateToActive("depthFirstSearch_description") || "A graph traversal algorithm that explores as far as possible along each branch before backtracking.",
+    detailedExplanation: translator.translateToActive("depthFirstSearch_detailedExplanation") || `
 <h3>Depth-First Search (DFS) Pathfinding Algorithm</h3>
 <p>Depth-First Search is a fundamental graph traversal algorithm that explores as deeply as possible along each branch before backtracking.</p>
 

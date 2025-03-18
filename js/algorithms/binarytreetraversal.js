@@ -1,8 +1,9 @@
 Algorithms.push({
-    name: "Binary Tree Traversals",
+    // Modified for translations:
+    name: translator.translateToActive("binaryTreeTraversal_name") || "Binary Tree Traversals",
     id: "binaryTreeTraversal",
-    description: "Demonstrates different ways to traverse a binary tree: in-order, pre-order, and post-order.",
-    detailedExplanation: `
+    description: translator.translateToActive("binaryTreeTraversal_description") || "Demonstrates in-order, pre-order, and post-order traversals of a binary tree.",
+    detailedExplanation: translator.translateToActive("binaryTreeTraversal_detailedExplanation") || `
 <h3>Binary Tree Traversals</h3>
 <p>Binary tree traversal is the process of visiting each node in a binary tree exactly once in a specific order.</p>
 

@@ -1,8 +1,8 @@
 Algorithms.push({
-    name: "AVL Tree Operations",
+    name: translator.translateToActive("avlTree_name") || "AVL Tree Operations",
     id: "avlTree",
-    description: "Demonstrates AVL tree operations including insertions and rotations to maintain balance.",
-    detailedExplanation: `
+    description: translator.translateToActive("avlTree_description") || "Demonstrates AVL tree operations including insertions and rotations to maintain balance.",
+    detailedExplanation: translator.translateToActive("avlTree_detailedExplanation") || `
 <h3>AVL Tree</h3>
 <p>AVL trees are self-balancing binary search trees where the heights of any two sibling subtrees differ by at most one.</p>
 

@@ -1,8 +1,8 @@
 Algorithms.push({
-    name: "Prim's Algorithm",
+    name: translator.translateToActive("prim_name") || "Prim's Algorithm",
     id: "prim",
-    description: "Finds a minimum spanning tree in a weighted, undirected graph.",
-    detailedExplanation: `
+    description: translator.translateToActive("prim_description") || "Finds a minimum spanning tree in a weighted, undirected graph.",
+    detailedExplanation: translator.translateToActive("prim_detailedExplanation") || `
 <h3>Prim's Algorithm</h3>
 <p>Prim's algorithm finds a minimum spanning tree in a weighted, undirected graph by growing a tree one edge at a time.</p>
 

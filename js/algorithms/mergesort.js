@@ -1,12 +1,12 @@
 Algorithms.push({
-  name: "Merge Sort",
+  // Modified for translations:
+  name: translator.translateToActive("mergeSort_name") || "Merge Sort",
   id: "mergeSort",
-  description:
-    "A divide and conquer algorithm that breaks down an array into smaller subarrays, sorts them, and then merges them back together.",
-  detailedExplanation: `
+  description: translator.translateToActive("mergeSort_description") || "A divide and conquer algorithm that divides an array, sorts subarrays, and merges them back together.",
+  detailedExplanation: translator.translateToActive("mergeSort_detailedExplanation") || `
 <h3>Merge Sort Algorithm Explained</h3>
-<p>Merge Sort is a stable, efficient sorting algorithm that follows the divide-and-conquer approach.</p>
-
+<p>Merge Sort divides an array into subarrays, sorts them, and then merges the sorted subarrays into one sorted array.</p>
+<!-- ...existing detailed explanation... -->
 <h4>Core Concept</h4>
 <ul>
 <li>Divide the unsorted list into n sublists</li>

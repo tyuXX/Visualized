@@ -1,9 +1,8 @@
 Algorithms.push({
-  name: "Bubble Sort",
+  name: translator.translateToActive("bubbleSort_name") || "Bubble Sort",
   id: "bubbleSort",
-  description:
-    "A simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.",
-  detailedExplanation: `
+  description: translator.translateToActive("bubbleSort_description") || "A simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.",
+  detailedExplanation: translator.translateToActive("bubbleSort_detailedExplanation") || `
 <h3>Bubble Sort Algorithm Explained</h3>
 <p>Bubble Sort is one of the simplest sorting algorithms, often used for educational purposes. Here's how it works:</p>
 

@@ -1,8 +1,8 @@
 Algorithms.push({
-    name: "Dijkstra's Algorithm",
+    name: translator.translateToActive("dijkstra_name") || "Dijkstra's Algorithm",
     id: "dijkstra",
-    description: "A pathfinding algorithm that finds the shortest path between nodes in a graph.",
-    detailedExplanation: `
+    description: translator.translateToActive("dijkstra_description") || "A pathfinding algorithm that finds the shortest path between nodes in a graph.",
+    detailedExplanation: translator.translateToActive("dijkstra_detailedExplanation") || `
 <h3>Dijkstra's Algorithm</h3>
 <p>Dijkstra's algorithm finds the shortest path between nodes in a graph by maintaining a set of unvisited nodes and continuously updating their distances.</p>
 

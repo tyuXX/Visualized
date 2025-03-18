@@ -3,6 +3,10 @@ const visualisationDiv = document.getElementById("visualisationDiv");
 const parameterContainer = document.getElementById("parameterContainer");
 const explanation = document.getElementById("explanation");
 const detailedExplanation = document.getElementById("detailedExplanation");
+const select = document.getElementById("algorithmSelect");
+const startButton = document.getElementById("startButton");
+const stopButton = document.getElementById("stopButton");
+const algorithmsDiv = document.getElementById("algorithms");
 var aborter = null;
 
 //Algorithms
@@ -13,43 +17,7 @@ let algorithmController = null;
 
 // Populate dropdown and set up initial state
 document.addEventListener("DOMContentLoaded", () => {
-  const select = document.getElementById("algorithmSelect");
-  const startButton = document.getElementById("startButton");
-  const stopButton = document.getElementById("stopButton");
-  const algorithmsDiv = document.getElementById("algorithms");
-
-  //Load algorithms from JSON file
-  fetch("js/algorithms/alg.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const loadPromises = data.map(alg => {
-        return new Promise((resolve, reject) => {
-          const algorithm = document.createElement("script");
-          algorithm.src = `./js/algorithms/${alg}`;
-          algorithm.onload = resolve;
-          algorithm.onerror = reject;
-          algorithm.async = false;
-          algorithmsDiv.appendChild(algorithm);
-          console.log(`Loading algorithm: ${alg}`);
-        });
-      });
-
-      // Wait for all scripts to load before calling reloadAlgorithms
-      Promise.all(loadPromises)
-        .then(() => {
-          console.log("All algorithms loaded");
-          reloadAlgorithms();
-        })
-        .catch(error => {
-          console.error("Error loading algorithm scripts:", error);
-        });
-    })
-    .catch((error) => {
-      console.error("Error loading algorithms:", error);
-    });
-
-  // Populate dropdown
-  
+  loadAlgorithms();
 
   // Initial parameter setup
   updateParameterInputs();
@@ -63,7 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
       detailedExplanation.innerHTML = selectedAlgo.detailedExplanation;
     } else {
       // Clear explanations when 'None' is selected using translation key
-      explanation.textContent = translator.translateToActive("selectAlgorithmInfo");
+      explanation.textContent = translator.translateToActive(
+        "selectAlgorithmInfo"
+      );
       detailedExplanation.innerHTML = "";
       visualisationDiv.innerHTML = "";
       parameterContainer.innerHTML = "";
@@ -90,19 +60,56 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function loadAlgorithms() {
+  //clear existing algorithms
+  Algorithms = [];
+  algorithmsDiv.innerHTML = "";
+
+  //Load algorithms from JSON file
+  fetch("js/algorithms/alg.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const loadPromises = data.map((alg) => {
+        return new Promise((resolve, reject) => {
+          const algorithm = document.createElement("script");
+          algorithm.src = `./js/algorithms/${alg}`;
+          algorithm.onload = resolve;
+          algorithm.onerror = reject;
+          algorithm.async = false;
+          algorithmsDiv.appendChild(algorithm);
+          console.log(`Loading algorithm: ${alg}`);
+        });
+      });
+
+      // Wait for all scripts to load before calling reloadAlgorithms
+      Promise.all(loadPromises)
+        .then(() => {
+          console.log("All algorithms loaded");
+          reloadAlgorithms();
+        })
+        .catch((error) => {
+          console.error("Error loading algorithm scripts:", error);
+        });
+    })
+    .catch((error) => {
+      console.error("Error loading algorithms:", error);
+    });
+}
 
 function reloadAlgorithms() {
-    const select = document.getElementById("algorithmSelect");
-    // Update default option with translation key
-    select.innerHTML = `<option value="None">${translator.translateToActive("noneOption")}</option>`;
-    Algorithms.forEach((alg) => {
-        const option = document.createElement("option");
-        option.value = alg.id;
-        option.textContent = alg.name;
-        select.appendChild(option);
-      });
-    // Dynamically update any new content
-    translator.translatePageToActive();
+  const select = document.getElementById("algorithmSelect");
+  // Update default option with translation key
+  select.innerHTML = `<option value="None">${translator.translateToActive(
+    "noneOption"
+  )}</option>`;
+  Algorithms.forEach((alg) => {
+    const option = document.createElement("option");
+    option.value = alg.id;
+    option.textContent = alg.name;
+    select.appendChild(option);
+  });
+  // Dynamically update any new content
+  translator.translatePageToActive();
 }
 
 // Dynamically generate parameter inputs based on selected algorithm

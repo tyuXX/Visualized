@@ -1,8 +1,8 @@
 Algorithms.push({
-    name: "Red-Black Tree Operations",
+    name: translator.translateToActive("redBlackTree_name") || "Red-Black Tree Operations",
     id: "redBlackTree",
-    description: "Demonstrates Red-Black tree operations including insertions and color adjustments to maintain balance.",
-    detailedExplanation: `
+    description: translator.translateToActive("redBlackTree_description") || "Demonstrates Red-Black tree operations including insertions and color adjustments to maintain balance.",
+    detailedExplanation: translator.translateToActive("redBlackTree_detailedExplanation") || `
 <h3>Red-Black Tree</h3>
 <p>Red-Black trees are self-balancing binary search trees that use node coloring to maintain balance.</p>
 

@@ -1,8 +1,8 @@
 Algorithms.push({
-    name: "Selection Sort",
+    name: translator.translateToActive("selectionSort_name") || "Selection Sort",
     id: "selectionSort",
-    description: "A simple sorting algorithm that repeatedly finds the minimum element from the unsorted portion.",
-    detailedExplanation: `
+    description: translator.translateToActive("selectionSort_description") || "A simple sorting algorithm that repeatedly finds the minimum element from the unsorted portion.",
+    detailedExplanation: translator.translateToActive("selectionSort_detailedExplanation") || `
 <h3>Selection Sort Algorithm</h3>
 <p>Selection Sort works by repeatedly finding the minimum element from the unsorted portion and placing it at the beginning.</p>
 

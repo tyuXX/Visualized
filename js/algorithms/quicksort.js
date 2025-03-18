@@ -1,9 +1,8 @@
 Algorithms.push({
-  name: "Quick Sort",
+  name: translator.translateToActive("quickSort_name") || "Quick Sort",
   id: "quickSort",
-  description:
-    "An efficient, in-place sorting algorithm that uses divide and conquer strategy.",
-  detailedExplanation: `
+  description: translator.translateToActive("quickSort_description") || "An efficient, in-place sorting algorithm that uses divide and conquer strategy.",
+  detailedExplanation: translator.translateToActive("quickSort_detailedExplanation") || `
 <h3>Quick Sort Algorithm Explained</h3>
 <p>Quick Sort is a highly efficient, divide-and-conquer sorting algorithm that works by selecting a 'pivot' element and partitioning the array around it.</p>
 
