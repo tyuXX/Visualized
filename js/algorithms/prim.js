@@ -2,47 +2,7 @@ Algorithms.push({
     name: translator.translateToActive("prim_name") || "Prim's Algorithm",
     id: "prim",
     description: translator.translateToActive("prim_description") || "Finds a minimum spanning tree in a weighted, undirected graph.",
-    detailedExplanation: translator.translateToActive("prim_detailedExplanation") || `
-<h3>Prim's Algorithm</h3>
-<p>Prim's algorithm finds a minimum spanning tree in a weighted, undirected graph by growing a tree one edge at a time.</p>
-
-<h4>Core Concept</h4>
-<ul>
-<li>Starts from arbitrary vertex</li>
-<li>Grows tree by adding cheapest edge to unvisited vertex</li>
-<li>Continues until all vertices are connected</li>
-</ul>
-
-<h4>Algorithm Steps</h4>
-<ol>
-<li>Start with any vertex</li>
-<li>Find cheapest edge to unvisited vertex</li>
-<li>Add vertex to tree</li>
-<li>Update edge costs to remaining vertices</li>
-<li>Repeat until all vertices included</li>
-</ol>
-
-<h4>Time Complexity</h4>
-<ul>
-<li>Time Complexity: O(E log V) with binary heap</li>
-<li>Space Complexity: O(V)</li>
-</ul>
-
-<h4>Pros and Cons</h4>
-<strong>Pros:</strong>
-<ul>
-<li>Finds optimal spanning tree</li>
-<li>Efficient for dense graphs</li>
-<li>Simple to implement</li>
-</ul>
-
-<strong>Cons:</strong>
-<ul>
-<li>Not suitable for disconnected graphs</li>
-<li>Requires all edges to be known</li>
-<li>May be slower than Kruskal's for sparse graphs</li>
-</ul>
-    `,
+    detailedExplanation: translator.translateToActive("prim_detailedExplanation"),
     parameters: [
         {
             name: "Grid Size",

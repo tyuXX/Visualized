@@ -2,47 +2,7 @@ Algorithms.push({
     name: translator.translateToActive("depthFirstSearch_name") || "Depth First Search",
     id: "depthFirstSearch",
     description: translator.translateToActive("depthFirstSearch_description") || "A graph traversal algorithm that explores as far as possible along each branch before backtracking.",
-    detailedExplanation: translator.translateToActive("depthFirstSearch_detailedExplanation") || `
-<h3>Depth-First Search (DFS) Pathfinding Algorithm</h3>
-<p>Depth-First Search is a fundamental graph traversal algorithm that explores as deeply as possible along each branch before backtracking.</p>
-
-<h4>Core Concept</h4>
-<ul>
-<li>Start at a chosen node (root)</li>
-<li>Explore as far as possible along each branch before backtracking</li>
-<li>Uses a stack or recursion to keep track of nodes to visit</li>
-</ul>
-
-<h4>Algorithm Steps</h4>
-<ol>
-<li>Start at the initial node</li>
-<li>Mark the current node as visited</li>
-<li>Explore an unvisited adjacent node</li>
-<li>Recursively apply the same process</li>
-<li>Backtrack when no unvisited nodes remain</li>
-</ol>
-
-<h4>Time Complexity</h4>
-<ul>
-<li>Time Complexity: O(V + E), where V is the number of vertices and E is the number of edges</li>
-<li>Space Complexity: O(V) due to the recursion stack</li>
-</ul>
-
-<h4>Pros and Cons</h4>
-<strong>Pros:</strong>
-<ul>
-<li>Memory efficient for deep graphs</li>
-<li>Can be used to detect cycles</li>
-<li>Useful for topological sorting</li>
-</ul>
-
-<strong>Cons:</strong>
-<ul>
-<li>May get stuck in infinite loops with cyclic graphs</li>
-<li>Not guaranteed to find the shortest path</li>
-<li>Can be slow for wide, shallow graphs</li>
-</ul>
-    `,
+    detailedExplanation: translator.translateToActive("depthFirstSearch_detailedExplanation"),
     parameters: [
         {
             name: "Grid Size",

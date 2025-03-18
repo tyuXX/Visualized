@@ -2,46 +2,7 @@ Algorithms.push({
     name: translator.translateToActive("selectionSort_name") || "Selection Sort",
     id: "selectionSort",
     description: translator.translateToActive("selectionSort_description") || "A simple sorting algorithm that repeatedly finds the minimum element from the unsorted portion.",
-    detailedExplanation: translator.translateToActive("selectionSort_detailedExplanation") || `
-<h3>Selection Sort Algorithm</h3>
-<p>Selection Sort works by repeatedly finding the minimum element from the unsorted portion and placing it at the beginning.</p>
-
-<h4>Core Concept</h4>
-<ul>
-<li>Divides array into sorted and unsorted portions</li>
-<li>Repeatedly finds minimum in unsorted portion</li>
-<li>Swaps minimum with first unsorted element</li>
-</ul>
-
-<h4>Algorithm Steps</h4>
-<ol>
-<li>Find minimum element in unsorted array</li>
-<li>Swap it with first unsorted position</li>
-<li>Move boundary of sorted portion right</li>
-<li>Repeat until array is sorted</li>
-</ol>
-
-<h4>Time Complexity</h4>
-<ul>
-<li>Time Complexity: O(n²)</li>
-<li>Space Complexity: O(1)</li>
-</ul>
-
-<h4>Pros and Cons</h4>
-<strong>Pros:</strong>
-<ul>
-<li>Simple to understand and implement</li>
-<li>Works well on small arrays</li>
-<li>Minimal memory usage</li>
-</ul>
-
-<strong>Cons:</strong>
-<ul>
-<li>Quadratic time complexity</li>
-<li>Not suitable for large datasets</li>
-<li>Does not adapt to data characteristics</li>
-</ul>
-    `,
+    detailedExplanation: translator.translateToActive("selectionSort_detailedExplanation"),
     parameters: [
         {
             name: "Array Size",

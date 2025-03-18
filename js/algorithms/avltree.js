@@ -2,32 +2,7 @@ Algorithms.push({
     name: translator.translateToActive("avlTree_name") || "AVL Tree Operations",
     id: "avlTree",
     description: translator.translateToActive("avlTree_description") || "Demonstrates AVL tree operations including insertions and rotations to maintain balance.",
-    detailedExplanation: translator.translateToActive("avlTree_detailedExplanation") || `
-<h3>AVL Tree</h3>
-<p>AVL trees are self-balancing binary search trees where the heights of any two sibling subtrees differ by at most one.</p>
-
-<h4>Key Properties</h4>
-<ul>
-<li>Balance Factor = Height(Left) - Height(Right)</li>
-<li>All nodes must have balance factor -1, 0, or 1</li>
-<li>Automatic rebalancing after insertions/deletions</li>
-</ul>
-
-<h4>Rotation Types</h4>
-<ul>
-<li>Left Rotation: Fix right-heavy imbalance</li>
-<li>Right Rotation: Fix left-heavy imbalance</li>
-<li>Left-Right Rotation: Fix left-right imbalance</li>
-<li>Right-Left Rotation: Fix right-left imbalance</li>
-</ul>
-
-<h4>Time Complexity</h4>
-<ul>
-<li>Search: O(log n)</li>
-<li>Insert: O(log n)</li>
-<li>Delete: O(log n)</li>
-</ul>
-    `,
+    detailedExplanation: translator.translateToActive("avlTree_detailedExplanation"),
     parameters: [
         {
             name: "Number of Nodes",

@@ -2,48 +2,7 @@ Algorithms.push({
     name: translator.translateToActive("dijkstra_name") || "Dijkstra's Algorithm",
     id: "dijkstra",
     description: translator.translateToActive("dijkstra_description") || "A pathfinding algorithm that finds the shortest path between nodes in a graph.",
-    detailedExplanation: translator.translateToActive("dijkstra_detailedExplanation") || `
-<h3>Dijkstra's Algorithm</h3>
-<p>Dijkstra's algorithm finds the shortest path between nodes in a graph by maintaining a set of unvisited nodes and continuously updating their distances.</p>
-
-<h4>Core Concept</h4>
-<ul>
-<li>Maintains a set of unvisited nodes</li>
-<li>Updates distances as shorter paths are found</li>
-<li>Always selects the unvisited node with smallest distance</li>
-</ul>
-
-<h4>Algorithm Steps</h4>
-<ol>
-<li>Mark all nodes unvisited with infinite distance</li>
-<li>Set start node distance to 0</li>
-<li>Select unvisited node with smallest distance</li>
-<li>Update neighbors' distances if shorter path found</li>
-<li>Mark current node as visited</li>
-<li>Repeat until destination reached</li>
-</ol>
-
-<h4>Time Complexity</h4>
-<ul>
-<li>Time Complexity: O((V + E) log V) with binary heap</li>
-<li>Space Complexity: O(V)</li>
-</ul>
-
-<h4>Pros and Cons</h4>
-<strong>Pros:</strong>
-<ul>
-<li>Guarantees shortest path</li>
-<li>Works with weighted edges</li>
-<li>Simple to implement</li>
-</ul>
-
-<strong>Cons:</strong>
-<ul>
-<li>Slower than A* for pathfinding</li>
-<li>Explores in all directions</li>
-<li>Not suitable for negative weights</li>
-</ul>
-    `,
+    detailedExplanation: translator.translateToActive("dijkstra_detailedExplanation"),
     parameters: [
         {
             name: "Grid Size",

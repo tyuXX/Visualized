@@ -3,50 +3,7 @@ Algorithms.push({
   name: translator.translateToActive("binarySearch_name") || "Binary Search",
   id: "binarySearch",
   description: translator.translateToActive("binarySearch_description") || "An efficient algorithm for searching a sorted array by repeatedly dividing the search interval in half.",
-  detailedExplanation: translator.translateToActive("binarySearch_detailedExplanation") || `
-<h3>Binary Search Algorithm Explained</h3>
-<p>Binary Search is a highly efficient algorithm for finding an element in a sorted array. Here's how it works:</p>
-
-<h4>Core Concept</h4>
-<ul>
-<li>Works only on sorted arrays</li>
-<li>Repeatedly divides the search interval in half</li>
-<li>Eliminates half of the remaining elements at each step</li>
-</ul>
-
-<h4>Algorithm Steps</h4>
-<ol>
-<li>Start with a sorted array</li>
-<li>Find the middle element of the array</li>
-<li>Compare the target value with the middle element</li>
-<li>If target equals middle, search is successful</li>
-<li>If target is less than middle, search the left half</li>
-<li>If target is greater than middle, search the right half</li>
-<li>Repeat until the target is found or search space is empty</li>
-</ol>
-
-<h4>Time Complexity</h4>
-<ul>
-<li>Worst Case: O(log n)</li>
-<li>Best Case: O(1) - when the middle element is the target</li>
-<li>Average Case: O(log n)</li>
-</ul>
-
-<h4>Pros and Cons</h4>
-<strong>Pros:</strong>
-<ul>
-<li>Extremely fast for large sorted datasets</li>
-<li>Logarithmic time complexity</li>
-<li>Much more efficient than linear search</li>
-</ul>
-
-<strong>Cons:</strong>
-<ul>
-<li>Requires the array to be sorted first</li>
-<li>Not suitable for unsorted arrays</li>
-<li>Less efficient for small arrays</li>
-</ul>
-    `,
+  detailedExplanation: translator.translateToActive("binarySearch_detailedExplanation"),
   parameters: [
     {
       name: "Array Size",

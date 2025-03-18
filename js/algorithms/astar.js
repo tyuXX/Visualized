@@ -3,47 +3,7 @@ Algorithms.push({
     name: translator.translateToActive("astar_name") || "A* Search",
     id: "astar",
     description: translator.translateToActive("astar_description") || "An informed search algorithm that finds the shortest path between nodes using heuristics.",
-    detailedExplanation: translator.translateToActive("astar_detailedExplanation") || `
-<h3>A* (A-Star) Pathfinding Algorithm</h3>
-<p>A* is an informed search algorithm that combines Dijkstra's algorithm with heuristic search to find the shortest path efficiently.</p>
-
-<h4>Core Concept</h4>
-<ul>
-<li>Uses both actual distance from start (g-score) and estimated distance to goal (h-score)</li>
-<li>f(n) = g(n) + h(n) where f is total cost, g is distance from start, h is estimated distance to goal</li>
-<li>Guarantees shortest path when using an admissible heuristic</li>
-</ul>
-
-<h4>Algorithm Steps</h4>
-<ol>
-<li>Start with initial node in open set</li>
-<li>Select node with lowest f-score from open set</li>
-<li>If goal reached, reconstruct path</li>
-<li>Explore neighbors, update scores</li>
-<li>Repeat until goal found or no path exists</li>
-</ol>
-
-<h4>Time Complexity</h4>
-<ul>
-<li>Time Complexity: O(b^d) where b is branching factor and d is depth</li>
-<li>Space Complexity: O(b^d) to store nodes</li>
-</ul>
-
-<h4>Pros and Cons</h4>
-<strong>Pros:</strong>
-<ul>
-<li>Guarantees shortest path</li>
-<li>More efficient than Dijkstra's algorithm</li>
-<li>Widely used in pathfinding</li>
-</ul>
-
-<strong>Cons:</strong>
-<ul>
-<li>Memory intensive for large spaces</li>
-<li>May be slower than simpler algorithms for small spaces</li>
-<li>Effectiveness depends on heuristic quality</li>
-</ul>
-`,
+    detailedExplanation: translator.translateToActive("astar_detailedExplanation"),
     parameters: [
         {
             name: "Grid Size",

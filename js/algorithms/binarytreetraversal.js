@@ -3,30 +3,7 @@ Algorithms.push({
     name: translator.translateToActive("binaryTreeTraversal_name") || "Binary Tree Traversals",
     id: "binaryTreeTraversal",
     description: translator.translateToActive("binaryTreeTraversal_description") || "Demonstrates in-order, pre-order, and post-order traversals of a binary tree.",
-    detailedExplanation: translator.translateToActive("binaryTreeTraversal_detailedExplanation") || `
-<h3>Binary Tree Traversals</h3>
-<p>Binary tree traversal is the process of visiting each node in a binary tree exactly once in a specific order.</p>
-
-<h4>Types of Traversals</h4>
-<ul>
-<li><strong>In-order (LNR):</strong> Left subtree, Node, Right subtree</li>
-<li><strong>Pre-order (NLR):</strong> Node, Left subtree, Right subtree</li>
-<li><strong>Post-order (LRN):</strong> Left subtree, Right subtree, Node</li>
-</ul>
-
-<h4>Common Applications</h4>
-<ul>
-<li>In-order: Get sorted elements from BST</li>
-<li>Pre-order: Copy/serialize tree structure</li>
-<li>Post-order: Delete nodes/cleanup memory</li>
-</ul>
-
-<h4>Time Complexity</h4>
-<ul>
-<li>Time Complexity: O(n) for all traversals</li>
-<li>Space Complexity: O(h) where h is height</li>
-</ul>
-    `,
+    detailedExplanation: translator.translateToActive("binaryTreeTraversal_detailedExplanation"),
     parameters: [
         {
             name: "Tree Size",

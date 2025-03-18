@@ -2,32 +2,7 @@ Algorithms.push({
     name: translator.translateToActive("redBlackTree_name") || "Red-Black Tree Operations",
     id: "redBlackTree",
     description: translator.translateToActive("redBlackTree_description") || "Demonstrates Red-Black tree operations including insertions and color adjustments to maintain balance.",
-    detailedExplanation: translator.translateToActive("redBlackTree_detailedExplanation") || `
-<h3>Red-Black Tree</h3>
-<p>Red-Black trees are self-balancing binary search trees that use node coloring to maintain balance.</p>
-
-<h4>Properties</h4>
-<ul>
-<li>Every node is either red or black</li>
-<li>Root is always black</li>
-<li>No two adjacent red nodes</li>
-<li>Every path from root to null has same number of black nodes</li>
-</ul>
-
-<h4>Operations</h4>
-<ul>
-<li>Color Flips: Change parent and children colors</li>
-<li>Rotations: Similar to AVL tree rotations</li>
-<li>Recoloring: Maintain red-black properties</li>
-</ul>
-
-<h4>Time Complexity</h4>
-<ul>
-<li>Search: O(log n)</li>
-<li>Insert: O(log n)</li>
-<li>Delete: O(log n)</li>
-</ul>
-    `,
+    detailedExplanation: translator.translateToActive("redBlackTree_detailedExplanation"),
     parameters: [
         {
             name: "Number of Nodes",
