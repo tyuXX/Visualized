@@ -273,6 +273,19 @@ body.dark-mode .detailed-explanation strong {
     transition: background-color 0.3s;
 }
 
+#lSelect {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: var(--dark-sorted-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
 body.dark-mode #theme-toggle {
     background-color: var(--dark-accent-color);
     color: var(--dark-bg-primary);

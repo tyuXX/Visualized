@@ -62,8 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
       explanation.textContent = selectedAlgo.description;
       detailedExplanation.innerHTML = selectedAlgo.detailedExplanation;
     } else {
-      // Clear explanations when 'None' is selected
-      explanation.textContent = "Select an algorithm to begin";
+      // Clear explanations when 'None' is selected using translation key
+      explanation.textContent = translator.translateToActive("selectAlgorithmInfo");
       detailedExplanation.innerHTML = "";
       visualisationDiv.innerHTML = "";
       parameterContainer.innerHTML = "";
@@ -93,13 +93,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function reloadAlgorithms() {
     const select = document.getElementById("algorithmSelect");
-    select.innerHTML = '<option value="None">None</option>'; // Clear and add default option
+    // Update default option with translation key
+    select.innerHTML = `<option value="None">${translator.translateToActive("noneOption")}</option>`;
     Algorithms.forEach((alg) => {
         const option = document.createElement("option");
         option.value = alg.id;
         option.textContent = alg.name;
         select.appendChild(option);
       });
+    // Dynamically update any new content
+    translator.translatePageToActive();
 }
 
 // Dynamically generate parameter inputs based on selected algorithm
@@ -162,9 +165,9 @@ function collectParameterValues() {
 
 // Start algorithm visualization
 async function startAlg() {
-  // Check if an algorithm is selected
+  // Check if an algorithm is selected; use translation key for alert
   if (algSelector.value === "None") {
-    alert("Please select an algorithm first!");
+    alert(translator.translateToActive("selectAlgorithmFirst"));
     return;
   }
 

@@ -15,9 +15,9 @@
                 <select name="algorithm" id="algorithmSelect">
                     <option value="None">None</option>
                 </select>
-                <button id="refreshAlgorithms" onclick="reloadAlgorithms()">Refresh Algorithms</button>
-                <button id="startButton" onclick="startAlg()">Start</button>
-                <button id="stopButton" onclick="stopAlg()">Stop</button>
+                <button data-ddctranslate="refreshAlgorithms" id="refreshAlgorithms" onclick="reloadAlgorithms()">Refresh Algorithms</button>
+                <button data-ddctranslate="start" id="startButton" onclick="startAlg()">Start</button>
+                <button data-ddctranslate="stop" id="stopButton" onclick="stopAlg()">Stop</button>
             </div>
             <div id="parameterContainer" class="parameter-container">
                 <!-- Dynamic parameter inputs will be inserted here -->
@@ -26,10 +26,12 @@
             <div id="explanation" class="explanation"></div>
             <div id="detailedExplanation" class="detailed-explanation"></div>
             <div class="theme-toggle-container">
-                <button id="theme-toggle">Toggle Dark Mode</button>
+                <select name="Language" id="lSelect"></select>
+                <button data-ddctranslate="toggleTheme" id="theme-toggle">Toggle Dark Mode</button>
             </div>
         </div>
         <div id="algorithms"></div>
+        <script src="js/translation.js" type="module"></script>
         <script src="js/script.js" defer></script>
     </body>
 </html>
