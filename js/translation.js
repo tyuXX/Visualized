@@ -1,4 +1,4 @@
-import { Translator, Language, setActiveLanguage } from "https://tyuxx.github.io/tyuLIB/lib/ddcTranslate/translator.js";
+import { Translator, Language, setActiveLanguage } from "https://tyuxx.gsdistance.org/tyuLIB/lib/ddcTranslate/translator.js";
 
 var translator = new Translator([
     new Language("English", "en-us", {
